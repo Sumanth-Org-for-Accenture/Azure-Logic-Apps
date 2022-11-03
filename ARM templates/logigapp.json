@@ -1,0 +1,51 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "functions": [],
+    "variables": {},
+    "resources": [
+{
+    "name": "logicAppMars",
+    "type": "Microsoft.Logic/workflows",
+    "apiVersion": "2017-07-01",
+    "location": "East US",
+    "properties": {
+        "definition": {
+            "$schema": "https://schema.management.azure.com/schemas/2016-06-01/Microsoft.Logic.json",
+            "contentVersion": "1.0.0.0",
+            "parameters": {},
+            "triggers": {
+                "mytrigger":{
+                    "type": "request",
+                    "kind": "http",
+                    "inputs":{
+                        "method": "get",
+                        "schema":{}
+                    }
+                }
+            },
+            "actions": {
+                "Response":{
+                    "type": "Response",
+                    "kind": "http",
+                    "inputs":{
+                        "Body": "This is Logic app",
+                        "statuscode": 200
+                    }
+
+                }
+            },
+            "outputs": {
+                "LogicAppURL":{
+                    "type": "string",
+                    "value": "[listCallbackUrl(concat(resourceId('Microsoft.Logic/workflows','logicAppMars','/triggers/manual'),2017-07-01).value)]"
+                }
+            }
+        },
+        "parameters": {}
+    }
+}
+    ],
+    "outputs": {}
+}
