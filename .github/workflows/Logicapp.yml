@@ -17,6 +17,8 @@ jobs:
       uses: Azure/login@v1.4.6
       with:
         creds: ${{secrets.SP_SECRET}}
+    - run: pwd
+      shell: powershell
     - name: Deploy Azure Resource Manager (ARM) Template
       uses: Azure/arm-deploy@v1.0.8
       with:
