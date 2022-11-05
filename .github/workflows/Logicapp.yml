@@ -25,7 +25,7 @@ jobs:
       with:
         scope: resourcegroup
         resourceGroupName: logicapp
-        template: '${{github.workspace}}\ARM-templates\logicapp.json'
+        template: ./ARM-templates/logicapp.json
         
     
     
