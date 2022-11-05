@@ -17,14 +17,15 @@ jobs:
       uses: Azure/login@v1.4.6
       with:
         creds: ${{secrets.SP_SECRET}}
-    - run: pwd
+    - run: ls
       shell: powershell
+      working-directory: ${{github.workspace}}
     - name: Deploy Azure Resource Manager (ARM) Template
       uses: Azure/arm-deploy@v1.0.8
       with:
         scope: resourcegroup
         resourceGroupName: logicapp
-        template: './ARM-templates/logicapp.json'
+        template: '${{github.workspace}}\ARM-templates\logicapp.json'
         
     
     
