@@ -22,7 +22,7 @@ jobs:
       with:
         scope: resourcegroup
         resourceGroupName: logicapp
-        template: 'ARM%20templates/logicapp.json'
+        template: 'ARM-templates/logicapp.json'
         
     
     
