@@ -1,0 +1,14 @@
+name: Login with managed identity
+on: 
+  workflow_dispatch:
+#   push:
+#      branches: ["main"] 
+     
+#   pull_request:
+#      branches: ["main"]
+
+jobs:
+  Login using managed identity
+    runs-on: windows-latest
+    
+    steps
