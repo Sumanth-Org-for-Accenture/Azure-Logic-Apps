@@ -11,4 +11,11 @@ jobs:
   Login using managed identity
     runs-on: windows-latest
     
-    steps
+    steps:
+    - name: Azure CLI Action
+      uses: Azure/cli@v1
+      with:
+    # Specify the script here
+        inlineScript: 
+            az login --identity --username 
+    
