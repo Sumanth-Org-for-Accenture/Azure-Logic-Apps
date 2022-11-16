@@ -30,7 +30,8 @@ jobs:
     - name: replace tokens
       uses: falnyr/replace-env-vars-action@master
       with:
-       filename: ./test.txt    
+       filename: ./test.txt  
+    - run: more test.txt
      
         
         
