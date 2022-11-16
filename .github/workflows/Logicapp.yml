@@ -27,13 +27,10 @@ jobs:
       id: mysecrets
     - run: echo ${{steps.mysecrets.output.clientId}}
            echo ${{steps.mysecrets.output.subscriptionId}}
-    - name: Replace tokens
-  # You may pin to the exact commit or the version.
-  # uses: cschleiden/replace-tokens@8e091844c27eb36853efbfade5ffca07260f0250
-      uses: cschleiden/replace-tokens@v1.2
+    - name: replace tokens
+      uses: falnyr/replace-env-vars-action@master
       with:
-    
-       files: '[./test.txt]'    
+       filename: ./test.txt    
      
         
         
