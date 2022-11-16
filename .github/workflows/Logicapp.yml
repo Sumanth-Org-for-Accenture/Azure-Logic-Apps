@@ -19,15 +19,25 @@ jobs:
       uses: Azure/login@v1.4.6
       with:
         creds: ${{secrets.SP_SECRET}}
-    - run: ls
-      shell: powershell
-      working-directory: ${{github.workspace}}
-    - name: Deploy Azure Resource Manager (ARM) Template
-      uses: Azure/arm-deploy@v1.0.8
+    - name: Azure Key Vault Action
+      uses: gincher/azure-keyvault@v1
       with:
-        scope: resourcegroup
-        resourceGroupName: logicapp
-        template: ./ARM-templates/logicapp.json
+        keyVaultName: "logicapp-demo"
+        secretsFilterString: 'clientId,subscriptionId'
+      id: mysecrets
+    - run: echo ${{steps.mysecrets.output.clientId}}
+           echo ${{steps.mysecrets.output.subscriptionId}}
+        
+        
+#     - run: ls
+#       shell: powershell
+#       working-directory: ${{github.workspace}}
+#     - name: Deploy Azure Resource Manager (ARM) Template
+#       uses: Azure/arm-deploy@v1.0.8
+#       with:
+#         scope: resourcegroup
+#         resourceGroupName: logicapp
+#         template: ./ARM-templates/logicapp.json
         
     
     
