@@ -1,2 +1,2 @@
-_clientId_
-_subscriptionId_
+#{clientId}#
+#{subscriptionId}#
