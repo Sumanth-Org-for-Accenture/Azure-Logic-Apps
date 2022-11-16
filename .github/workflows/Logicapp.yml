@@ -22,8 +22,8 @@ jobs:
     - name: Azure Key Vault Action
       uses: Azure/get-keyvault-secrets@v1
       with:
-        keyVaultName: "logicapp-demo"
-        secretsFilterString: 'clientId,subscriptionId'
+        keyVault: "logicapp-demo"
+        secrets: 'clientId,subscriptionId'
       id: mysecrets
     - run: echo ${{steps.mysecrets.output.clientId}}
            echo ${{steps.mysecrets.output.subscriptionId}}
