@@ -26,7 +26,7 @@ jobs:
       uses: Azure/arm-deploy@v1.0.8
       with:
         scope: resourcegroup
-        resourceGroupName: SN-demo
+        resourceGroupName: logicapp
         template: ./ARM-templates/logicapp.json
         
     
