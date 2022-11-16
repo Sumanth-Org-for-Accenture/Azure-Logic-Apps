@@ -31,9 +31,14 @@ jobs:
       uses: falnyr/replace-env-vars-action@master
       with:
        filename: ./test.txt  
-    - run: more test.txt
+       
+    - name: upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+       name: my-artifact
+       path: ${{github.workspace}}
+      
      
-        
         
 #     - run: ls
 #       shell: powershell
