@@ -39,16 +39,15 @@ jobs:
        path: ${{github.workspace}}
       
      
-        
-#     - run: ls
-#       shell: powershell
-#       working-directory: ${{github.workspace}}
-#     - name: Deploy Azure Resource Manager (ARM) Template
-#       uses: Azure/arm-deploy@v1.0.8
-#       with:
-#         scope: resourcegroup
-#         resourceGroupName: logicapp
-#         template: ./ARM-templates/logicapp.json
+    - run: ls
+      shell: powershell
+      working-directory: ${{github.workspace}}
+    - name: Deploy Azure Resource Manager (ARM) Template
+      uses: Azure/arm-deploy@v1.0.8
+      with:
+        scope: resourcegroup
+        resourceGroupName: logicapp
+        template: ./ARM-templates/logicapp.json
         
     
     
